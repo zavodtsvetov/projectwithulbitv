@@ -6,9 +6,11 @@ import { AuthContext } from "../context/context";
 const Login = () => {
   const navigate = useNavigate();
   const { isAuth, setIsAuth } = useContext(AuthContext);
-  const login = (e) => {
-    e.preventDefault();
+  const login = (event) => {
+    event.preventDefault();
     setIsAuth(true);
+    localStorage.setItem("auth", "true");
+
     navigate("/posts");
   };
 

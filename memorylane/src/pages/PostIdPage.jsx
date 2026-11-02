@@ -44,9 +44,12 @@ const PostIdPage = () => {
         ) : (
           ""
         )}
-        <MyButton onClick={() => navigate(`/posts/${Number(post.id - 1)}`)}>
-          Предыдущий пост
-        </MyButton>
+        {params.id >= 2 && (
+          <MyButton onClick={() => navigate(`/posts/${Number(post.id - 1)}`)}>
+            Предыдущий пост
+          </MyButton>
+        )}
+
         <MyButton onClick={() => navigate("/posts")}>Вернуться назад</MyButton>
         <MyButton onClick={() => navigate(`/posts/${Number(post.id) + 1}`)}>
           След пост
